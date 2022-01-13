@@ -32,5 +32,6 @@ class Server_Socket:
         msg = pickle.dumps([text, next_mode])
         self.server_socket.sendto(msg, self.client_addr)
         data, addr = self.server_socket.recvfrom(4096)
+        print(pickle.loads(data))
         self.client_addr = addr
         return pickle.loads(data), self.server_socket, addr

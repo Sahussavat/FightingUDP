@@ -31,5 +31,5 @@ while True:
         if not data: continue
         data = pickle.loads(data) 
         print(data[0])
-        client_socket.sendto(pickle.dumps("next"), addr)
+        client_socket.sendto(pickle.dumps("next text"), addr)
         mode = data[1]

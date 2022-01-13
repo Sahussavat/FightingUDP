@@ -14,7 +14,7 @@ class Player:
 
     defense = 0
     MAX_ENERGY = 3
-    energy = MAX_ENERGY
+    energy = 0
 
     currentAction = None
 
