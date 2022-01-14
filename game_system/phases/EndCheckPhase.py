@@ -13,11 +13,13 @@ class EndCheckPhase:
         for player in players:
             if players[0].isDead() and players[1].isDead():
                 Server_Socket.getInstance().action("\nDraw\n","recv")
+                break
             elif(player.isDead()): 
                 isGameEnd = True
                 if(isinstance(player, Dummy)):
                     Server_Socket.getInstance().action("\nYou Win\n","recv")
                 else: Server_Socket.getInstance().action("\nYou Lose\n","recv")
+                break
         self.gameMain.isGameEnd = isGameEnd
 
     def next_phase(self):
